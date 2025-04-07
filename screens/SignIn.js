@@ -17,7 +17,7 @@ const SignInScreen = () => {
 
     try {
       // เรียกใช้ API Login
-      const response = await axios.post('https://your-api-endpoint.com/tokens', {
+      const response = await axios.post('http://192.168.1.24:5062/Tokens', {
         nationalId,
         password
       });
@@ -25,7 +25,7 @@ const SignInScreen = () => {
       // บันทึก Token ลงใน Secure Storage
       await SecureStore.setItemAsync('userToken', response.data.token);
       
-      navigation.navigate('Main');
+      navigation.navigate('MainDrawer');
 
     } catch (error) {
       let errorMessage = 'เกิดข้อผิดพลาดในการเชื่อมต่อ';
@@ -35,6 +35,7 @@ const SignInScreen = () => {
         errorMessage = error.response.data?.message || 'ล็อกอินไม่สำเร็จ';
       } else if (error.request) {
         errorMessage = 'ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้';
+        console.log('📡 No response received. Request was:', error.request);
       }
       
       Alert.alert('ข้อผิดพลาด', errorMessage);
