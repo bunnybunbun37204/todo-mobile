@@ -76,16 +76,6 @@ const SignInScreen = () => {
         onPress={handleLogin}
         color="#007bff"
       />
-
-      <Text style={{ marginTop: 20 }}>
-        ยังไม่มีบัญชีผู้ใช้?{' '}
-        <Text
-          style={{ color: '#007bff', fontWeight: 'bold' }}
-          onPress={() => navigation.navigate('MainDrawer')}
-        >
-          สมัครสมาชิกที่นี่
-        </Text>
-      </Text>
     </View>
   );
 };
