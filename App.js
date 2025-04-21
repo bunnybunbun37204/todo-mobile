@@ -6,6 +6,7 @@ import * as SecureStore from 'expo-secure-store';
 import SignIn from "./screens/SignIn";
 import Credit from "./screens/Credit";
 import Main from "./screens/Main";
+import { PaperProvider } from "react-native-paper";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -49,6 +50,7 @@ function MainDrawer() {
 
 export default function App() {
   return (
+    <PaperProvider>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen 
@@ -63,5 +65,6 @@ export default function App() {
         />
       </Stack.Navigator>
     </NavigationContainer>
+    </PaperProvider>
   );
 }

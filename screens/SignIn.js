@@ -17,7 +17,7 @@ const SignInScreen = () => {
 
     try {
       // เรียกใช้ API Login
-      const response = await axios.post('http://192.168.1.24:5062/Tokens', {
+      const response = await axios.post('http://192.168.217.193:5062/Tokens', {
         nationalId,
         password
       });
